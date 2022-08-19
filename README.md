@@ -1,2 +1,13 @@
 # district-map-2022
-2022 district map
+
+```
+npm install
+```
+
+## run
+
+```
+npm run build
+```
+
+
