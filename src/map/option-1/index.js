@@ -17,6 +17,7 @@ let document = dom.window.document;
  */
 
 let paths = document.querySelectorAll('path');
+console.log('paths found:', paths.length);
 
 paths.forEach((item, i) => {
     let id = item.getAttribute('id');
