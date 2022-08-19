@@ -4,12 +4,13 @@
   "description": "2022 district map",
   "private": true,
   "scripts": {
-    "build": "node ./index.js"
+    "build": "./init.sh && node ./index.js"
   },
   "devDependencies": {
     "cli-helper": "^1.0.0",
     "eslint": "^7.28.0",
     "eslint-config-recommended": "^4.1.0",
+    "jsdom": "^20.0.0",
     "module-alias": "^2.2.2"
   }
 }
