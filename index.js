@@ -1,2 +1,3 @@
 require('./alias');
-require('./src/run');
+
+require('./src/map/option-1');

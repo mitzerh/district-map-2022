@@ -1,6 +1,6 @@
-
 const path = require('path');
-const base = path.normalize(`${__dirname}/..`);
+const dir = __dirname;
+const base = path.normalize(`${dir}/..`);
 
 const Config = (() => {
 
