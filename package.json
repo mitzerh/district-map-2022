@@ -1,0 +1,15 @@
+{
+  "name": "district-map-2022",
+  "version": "1.0.0",
+  "description": "2022 district map",
+  "private": true,
+  "scripts": {
+    "build": "node ./index.js"
+  },
+  "devDependencies": {
+    "cli-helper": "^1.0.0",
+    "eslint": "^7.28.0",
+    "eslint-config-recommended": "^4.1.0",
+    "module-alias": "^2.2.2"
+  }
+}
