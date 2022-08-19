@@ -13,8 +13,9 @@ class Helper extends CLIHelper {
         return this.readFile(mapPath);
     }
 
-    write(markup, id) {
-        this.writeFile(`${config.dir.dest}/map.${id}.svg`, markup)
+    write(svg, html, id) {
+        this.writeFile(`${config.dir.dest}/map.${id}.svg`, svg);
+        this.writeFile(`${config.dir.dest}/map.${id}.html`, html);
     }
 
     getPathInfo(lookup, pathInfo) {

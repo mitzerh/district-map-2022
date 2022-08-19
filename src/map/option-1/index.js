@@ -42,5 +42,9 @@ paths.forEach((item, i) => {
     }
 })
 
+//let svg = dom.serialize();
+let svg = document.querySelector('svg').outerHTML;
+let html = Helper.readFile(`${dir}/template.html`);
+html = html.replace('{{SVG_MAP}}', svg);
 
-Helper.write(dom.serialize(), folder);
+Helper.write(svg, html, folder);
