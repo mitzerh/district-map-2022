@@ -14,7 +14,7 @@ class Helper extends CLIHelper {
     }
 
     write(markup, id) {
-        this.writeFile(`${config.dir.dest}/map.svg`, markup)
+        this.writeFile(`${config.dir.dest}/map.${id}.svg`, markup)
     }
 
     getPathInfo(lookup, pathInfo) {
@@ -30,6 +30,11 @@ class Helper extends CLIHelper {
             }
         }
         return found;
+    }
+
+    folderName(dir) {
+        let sp = dir.split('/');
+        return sp[sp.length-1];
     }
 
 }

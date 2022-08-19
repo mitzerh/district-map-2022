@@ -6,9 +6,15 @@ const mapping = require('@mapping');
 const dir = __dirname;
 const PATH_INFO = mapping(dir);
 
+let folder = Helper.folderName(dir);
 let raw = Helper.read(dir);
 let dom = new JSDOM(raw);
 let document = dom.window.document;
+
+/**
+ * this portion is where you start to
+ * customize lookup for the dom
+ */
 
 let paths = document.querySelectorAll('path');
 
@@ -17,20 +23,24 @@ paths.forEach((item, i) => {
     let num = parseInt(id.replace(/path/, ''), 10)
     item.setAttribute('data-num', num);
 
+    // place the state code
+    // the first 50 paths in the svg
+    // looks to be the state boundaries
     let code = config.states[i] || null;
     if (code) {
         item.setAttribute('data-code', code);
     }
 
-    // districts
+    // place the districts & state code
     let pathInfo = Helper.getPathInfo(id, PATH_INFO);
     if (pathInfo) {
         console.log('found!', id, pathInfo);
-        item.setAttribute('data-district', pathInfo.district);
+        if (pathInfo.district) {
+            item.setAttribute('data-district', pathInfo.district);
+        }
         item.setAttribute('data-code', pathInfo.code);
     }
-    //console.log(item.outerHTML);
 })
 
 
-Helper.write(dom.serialize());
+Helper.write(dom.serialize(), folder);
